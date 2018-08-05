@@ -18,7 +18,7 @@ export const FETCH_CHEESES = 'FETCH_CHEESES';
 export const fetchCheeses = () => dispatch => {
   console.log('fetch cheeses');
   dispatch(fetchCheesesRequest());
-  return fetch('localhost:8080/api/cheeses')
+  return fetch('http://localhost:8080/api/cheeses')
     .then(res => {
       if (!res.ok) {
         throw new Error(res.statusText);
