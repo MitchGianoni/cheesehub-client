@@ -1,3 +1,4 @@
+import {BASE_URL} from '../config';
 export const FETCH_CHEESES_REQUEST = 'FETCH_CHEESES_REQUEST';
 export const fetchCheesesRequest = () => ({
   type: FETCH_CHEESES_REQUEST
@@ -18,7 +19,7 @@ export const FETCH_CHEESES = 'FETCH_CHEESES';
 export const fetchCheeses = () => dispatch => {
   console.log('fetch cheeses');
   dispatch(fetchCheesesRequest());
-  return fetch('http://localhost:8080/api/cheeses')
+  return fetch(`${BASE_URL}/api/cheeses`)
     .then(res => {
       if (!res.ok) {
         throw new Error(res.statusText);
